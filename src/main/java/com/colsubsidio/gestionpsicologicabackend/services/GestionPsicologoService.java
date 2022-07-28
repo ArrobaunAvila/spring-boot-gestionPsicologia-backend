@@ -237,8 +237,12 @@ private UpdateKibanaService updateKibanaService;
          
          registro = registroGestionRepository.saveAndFlush(registro);
          SearchResponse responseUpdate=updateKibanaService.searchDatos(uuid, registro.getIdGestion().toString(), dtoKibana);
-         responseUpdate.getDatos().put("estadoGestion",registro.getIdEstadoGestion().getNombre());
-         updateKibanaService.actualizarElastic(uuid, dtoKibana, responseUpdate.getDatos(), null, responseUpdate.getIdDoc(),estadoGestion.getNombre());
+         if(responseUpdate!=null && responseUpdate.getDatos()!=null){
+             responseUpdate.getDatos().put("estadoGestion",registro.getIdEstadoGestion().getNombre());
+             updateKibanaService.actualizarElastic(uuid, dtoKibana, responseUpdate.getDatos(), null, responseUpdate.getIdDoc(),estadoGestion.getNombre());
+         
+         }
+         
          response.setDescripcion("guardado con exito");
          response.setEstado("OK");
          RegistroGestionPsicologicaDTO dto=utilsMapDto.registroGestionPsicologicaDTO(registro);

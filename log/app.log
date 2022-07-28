@@ -1,0 +1,95 @@
+2022-07-28 08:49:04.156 [INFO ] [] c.c.g.GestionPsicologicaMain:651 - No active profile set, falling back to default profiles: default
+2022-07-28 08:49:05.398 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-28 08:49:05.587 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:187 - Finished Spring Data repository scanning in 173ms. Found 4 JPA repository interfaces.
+2022-07-28 08:49:05.994 [INFO ] [] o.s.c.c.s.GenericScope:295 - BeanFactory id=595edab7-e617-3c6b-b60b-efe13e5b143e
+2022-07-28 08:49:06.377 [INFO ] [] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.colsubsidio.gestionpsicologicabackend.client.KibbanaClientRest' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-28 08:49:06.380 [INFO ] [] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.colsubsidio.gestionpsicologicabackend.client.LogClientRest' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-28 08:49:07.220 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:92 - Tomcat initialized with port(s): 8081 (http)
+2022-07-28 08:49:07.254 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-07-28 08:49:07.255 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2022-07-28 08:49:07.534 [INFO ] [] o.a.c.c.C.[.[.[/]:173 - Initializing Spring embedded WebApplicationContext
+2022-07-28 08:49:07.535 [INFO ] [] o.s.w.c.ContextLoader:284 - Root WebApplicationContext: initialization completed in 3334 ms
+2022-07-28 08:49:08.069 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-07-28 08:49:09.381 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-07-28 08:49:09.503 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-28 08:49:09.731 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2022-07-28 08:49:10.167 [INFO ] [] o.h.a.c.Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2022-07-28 08:49:10.698 [INFO ] [] o.h.d.Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-07-28 08:49:12.766 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-28 08:49:12.957 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-28 08:49:13.649 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-28 08:49:15.449 [INFO ] [] o.s.s.c.ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-28 08:49:16.322 [INFO ] [] o.s.s.c.ThreadPoolTaskScheduler:181 - Initializing ExecutorService 'taskScheduler'
+2022-07-28 08:49:16.913 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:204 - Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-28 08:49:17.185 [INFO ] [] c.c.g.GestionPsicologicaMain:61 - Started GestionPsicologicaMain in 14.686 seconds (JVM running for 35.07)
+2022-07-28 08:49:42.199 [INFO ] [] o.a.c.c.C.[.[.[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-28 08:49:42.199 [INFO ] [] o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2022-07-28 08:49:42.209 [INFO ] [] o.s.w.s.DispatcherServlet:547 - Completed initialization in 9 ms
+2022-07-28 08:49:42.501 [INFO ] [] c.c.g.m.r.GestioPsicologoRepository:60 - 81d84d71-883f-4d57-8737-488e85ab1432Se recuperaron 2Registros
+2022-07-28 08:50:03.633 [INFO ] [] c.c.g.m.r.GestioPsicologoRepository:60 - d3b71d6e-8a0b-4319-beb8-b4327abfaf9bSe recuperaron 2Registros
+2022-07-28 08:50:06.376 [INFO ] [] c.c.g.m.r.GestioPsicologoRepository:60 - 2d6dab40-5d80-4637-8c5d-fcfaf94c977dSe recuperaron 2Registros
+2022-07-28 08:50:07.477 [INFO ] [] c.c.g.m.r.GestioPsicologoRepository:60 - 9a6cb0a9-3a78-4c55-a3ed-79eb148d4661Se recuperaron 2Registros
+2022-07-28 08:50:08.452 [INFO ] [] c.c.g.m.r.GestioPsicologoRepository:60 - a115739d-85f8-499b-b409-64b1475e8f2fSe recuperaron 2Registros
+2022-07-28 08:50:41.317 [ERROR] [] c.c.g.s.GestionPsicologoService:252 - b9a20b90-18c4-477d-aa8e-5b635cbe8f1c Excepcion al actualizar estado gestion ID :2
+2022-07-28 08:51:17.999 [ERROR] [] c.c.g.s.GestionPsicologoService:252 - 7b706347-e4f4-4d88-ac58-a57eba55f014 Excepcion al actualizar estado gestion ID :2
+2022-07-28 08:51:52.053 [ERROR] [] c.c.g.s.GestionPsicologoService:252 - 4bd4d793-7aa7-4fe7-b21d-570a307bf9c0 Excepcion al actualizar estado gestion ID :2
+2022-07-28 09:23:09.947 [INFO ] [] c.c.g.GestionPsicologicaMain:651 - No active profile set, falling back to default profiles: default
+2022-07-28 09:23:11.095 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-28 09:23:11.270 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:187 - Finished Spring Data repository scanning in 158ms. Found 4 JPA repository interfaces.
+2022-07-28 09:23:11.621 [INFO ] [] o.s.c.c.s.GenericScope:295 - BeanFactory id=595edab7-e617-3c6b-b60b-efe13e5b143e
+2022-07-28 09:23:11.891 [INFO ] [] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.colsubsidio.gestionpsicologicabackend.client.KibbanaClientRest' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-28 09:23:11.893 [INFO ] [] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.colsubsidio.gestionpsicologicabackend.client.LogClientRest' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-28 09:23:12.535 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:92 - Tomcat initialized with port(s): 8081 (http)
+2022-07-28 09:23:12.549 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-07-28 09:23:12.550 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2022-07-28 09:23:12.781 [INFO ] [] o.a.c.c.C.[.[.[/]:173 - Initializing Spring embedded WebApplicationContext
+2022-07-28 09:23:12.782 [INFO ] [] o.s.w.c.ContextLoader:284 - Root WebApplicationContext: initialization completed in 2796 ms
+2022-07-28 09:23:13.181 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-07-28 09:23:14.563 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-07-28 09:23:14.679 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-28 09:23:14.832 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2022-07-28 09:23:15.098 [INFO ] [] o.h.a.c.Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2022-07-28 09:23:15.487 [INFO ] [] o.h.d.Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-07-28 09:23:17.163 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-28 09:23:17.302 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-28 09:23:17.870 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-28 09:23:19.011 [INFO ] [] o.s.s.c.ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-28 09:23:19.461 [INFO ] [] o.s.s.c.ThreadPoolTaskScheduler:181 - Initializing ExecutorService 'taskScheduler'
+2022-07-28 09:23:20.752 [INFO ] [] o.s.c.c.u.InetUtils:170 - Cannot determine local hostname
+2022-07-28 09:23:20.849 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:204 - Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-28 09:23:22.111 [INFO ] [] o.s.c.c.u.InetUtils:170 - Cannot determine local hostname
+2022-07-28 09:23:22.114 [INFO ] [] c.c.g.GestionPsicologicaMain:61 - Started GestionPsicologicaMain in 15.627 seconds (JVM running for 16.314)
+2022-07-28 09:23:29.746 [INFO ] [] o.a.c.c.C.[.[.[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-28 09:23:29.746 [INFO ] [] o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2022-07-28 09:23:29.757 [INFO ] [] o.s.w.s.DispatcherServlet:547 - Completed initialization in 10 ms
+2022-07-28 09:23:32.460 [ERROR] [] c.c.g.s.GestionPsicologoService:256 - b44a309d-9be5-44b1-a59e-d397cd1c237d Excepcion al actualizar estado gestion ID :2
+2022-07-28 09:24:27.852 [INFO ] [] c.c.g.GestionPsicologicaMain:651 - No active profile set, falling back to default profiles: default
+2022-07-28 09:24:28.999 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:127 - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-07-28 09:24:29.175 [INFO ] [] o.s.d.r.c.RepositoryConfigurationDelegate:187 - Finished Spring Data repository scanning in 160ms. Found 4 JPA repository interfaces.
+2022-07-28 09:24:29.538 [INFO ] [] o.s.c.c.s.GenericScope:295 - BeanFactory id=595edab7-e617-3c6b-b60b-efe13e5b143e
+2022-07-28 09:24:29.828 [INFO ] [] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.colsubsidio.gestionpsicologicabackend.client.KibbanaClientRest' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-28 09:24:29.830 [INFO ] [] o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker:330 - Bean 'com.colsubsidio.gestionpsicologicabackend.client.LogClientRest' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2022-07-28 09:24:30.505 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:92 - Tomcat initialized with port(s): 8081 (http)
+2022-07-28 09:24:30.525 [INFO ] [] o.a.c.c.StandardService:173 - Starting service [Tomcat]
+2022-07-28 09:24:30.527 [INFO ] [] o.a.c.c.StandardEngine:173 - Starting Servlet engine: [Apache Tomcat/9.0.33]
+2022-07-28 09:24:30.871 [INFO ] [] o.a.c.c.C.[.[.[/]:173 - Initializing Spring embedded WebApplicationContext
+2022-07-28 09:24:30.872 [INFO ] [] o.s.w.c.ContextLoader:284 - Root WebApplicationContext: initialization completed in 2975 ms
+2022-07-28 09:24:31.272 [INFO ] [] c.z.h.HikariDataSource:110 - HikariPool-1 - Starting...
+2022-07-28 09:24:32.527 [INFO ] [] c.z.h.HikariDataSource:123 - HikariPool-1 - Start completed.
+2022-07-28 09:24:32.670 [INFO ] [] o.h.j.i.u.LogHelper:31 - HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-07-28 09:24:32.916 [INFO ] [] o.h.Version:44 - HHH000412: Hibernate ORM core version 5.4.12.Final
+2022-07-28 09:24:33.254 [INFO ] [] o.h.a.c.Version:49 - HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2022-07-28 09:24:33.736 [INFO ] [] o.h.d.Dialect:172 - HHH000400: Using dialect: org.hibernate.dialect.SQLServerDialect
+2022-07-28 09:24:35.893 [INFO ] [] o.h.e.t.j.p.i.JtaPlatformInitiator:52 - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-07-28 09:24:36.110 [INFO ] [] o.s.o.j.LocalContainerEntityManagerFactoryBean:416 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-07-28 09:24:36.783 [WARN ] [] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration:220 - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-07-28 09:24:37.979 [INFO ] [] o.s.s.c.ThreadPoolTaskExecutor:181 - Initializing ExecutorService 'applicationTaskExecutor'
+2022-07-28 09:24:38.526 [INFO ] [] o.s.s.c.ThreadPoolTaskScheduler:181 - Initializing ExecutorService 'taskScheduler'
+2022-07-28 09:24:39.865 [INFO ] [] o.s.c.c.u.InetUtils:170 - Cannot determine local hostname
+2022-07-28 09:24:40.019 [INFO ] [] o.s.b.w.e.t.TomcatWebServer:204 - Tomcat started on port(s): 8081 (http) with context path ''
+2022-07-28 09:24:41.318 [INFO ] [] o.s.c.c.u.InetUtils:170 - Cannot determine local hostname
+2022-07-28 09:24:41.324 [INFO ] [] c.c.g.GestionPsicologicaMain:61 - Started GestionPsicologicaMain in 16.961 seconds (JVM running for 17.681)
+2022-07-28 09:25:33.474 [INFO ] [] o.a.c.c.C.[.[.[/]:173 - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-07-28 09:25:33.475 [INFO ] [] o.s.w.s.DispatcherServlet:525 - Initializing Servlet 'dispatcherServlet'
+2022-07-28 09:25:33.486 [INFO ] [] o.s.w.s.DispatcherServlet:547 - Completed initialization in 11 ms
+2022-07-28 09:25:54.772 [INFO ] [] c.c.g.m.r.GestioPsicologoRepository:60 - f826f9f3-7e8d-44c4-a6cb-168971ed4dd1Se recuperaron 2Registros

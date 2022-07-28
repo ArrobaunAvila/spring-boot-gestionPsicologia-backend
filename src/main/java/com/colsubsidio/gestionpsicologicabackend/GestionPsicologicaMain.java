@@ -27,7 +27,7 @@ public class GestionPsicologicaMain {
     
     
     
-    @PostConstruct
+       @PostConstruct
 	public void started() {
 		TimeZone.setDefault(TimeZone.getTimeZone("America/Bogota"));
 	}

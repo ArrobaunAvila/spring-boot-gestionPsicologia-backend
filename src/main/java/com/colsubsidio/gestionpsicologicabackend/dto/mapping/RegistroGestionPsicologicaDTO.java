@@ -37,6 +37,8 @@ public class RegistroGestionPsicologicaDTO {
     
     private String estado;
     
+    private Integer idEstadoGestion;
+    
     
     
 }

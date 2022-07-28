@@ -46,7 +46,7 @@ public class UtilsMapDto {
         dto.setIdGestion(object.getIdGestion());
         dto.setRecibioApoyoPsicologico(object.getRecibioApoyoPsicologico());
         dto.setEstado(object.getIdEstadoGestion().getNombre());
-        
+        dto.setIdEstadoGestion(object.getIdEstadoGestion().getIdEstado().intValue());
         return dto;
         
         

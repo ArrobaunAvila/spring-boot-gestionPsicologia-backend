@@ -7,7 +7,7 @@ package com.colsubsidio.gestionpsicologicabackend.dto;
 
 import com.colsubsidio.gestionpsicologicabackend.dto.mapping.GestionPsicologoDTO;
 import com.colsubsidio.gestionpsicologicabackend.dto.mapping.RegistroPsicologiaDTO;
-import com.colsubsidio.gestionpsicologicabackend.model.entities.GestionPsicologo;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
