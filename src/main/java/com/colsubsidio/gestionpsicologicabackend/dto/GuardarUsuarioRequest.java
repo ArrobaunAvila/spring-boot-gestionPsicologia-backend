@@ -18,6 +18,8 @@ public class GuardarUsuarioRequest {
     
     private String nombreUsuario;
     
+    private String apellidoUsuario;
+    
     private String usuarioLogin;
     
     private String password;

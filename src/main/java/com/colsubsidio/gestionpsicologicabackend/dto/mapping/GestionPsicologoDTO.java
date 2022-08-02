@@ -26,5 +26,7 @@ public class GestionPsicologoDTO {
     private String usuarioNombre;
     
     private String numeroDeGestion;
+    
+    private Integer idEstadoGestion;
 
 }

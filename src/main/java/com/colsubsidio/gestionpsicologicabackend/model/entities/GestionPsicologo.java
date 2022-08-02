@@ -56,6 +56,8 @@ public class GestionPsicologo implements Serializable {
     @JoinColumn(name = "idUsuarioGestiona", referencedColumnName = "idUsuario")
     @ManyToOne(optional = false)
     private UsuarioGestion idUsuarioGestiona;
+    @Column(name = "idEstadoGestion")
+    private Integer idEstadoGestion;
 
     public GestionPsicologo() {
     }
@@ -93,6 +95,14 @@ public class GestionPsicologo implements Serializable {
 
     public void setComentarioGestion(String comentarioGestion) {
         this.comentarioGestion = comentarioGestion;
+    }
+
+    public Integer getIdEstadoGestion() {
+        return idEstadoGestion;
+    }
+
+    public void setIdEstadoGestion(Integer idEstadoGestion) {
+        this.idEstadoGestion = idEstadoGestion;
     }
 
    

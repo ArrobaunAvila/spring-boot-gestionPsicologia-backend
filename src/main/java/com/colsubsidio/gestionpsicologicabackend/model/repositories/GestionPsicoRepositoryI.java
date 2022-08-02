@@ -22,7 +22,7 @@ public interface GestionPsicoRepositoryI extends JpaRepository<GestionPsicologo,
     
     
     
-    @Query(value="select P.* from gestionPsicologo P where P.idRegistroGestion=:idGestion",nativeQuery = true)            
+    @Query(value="select P.* from gestionPsicologo P where P.idRegistroGestion=:idGestion order by numeroGestion desc",nativeQuery = true)            
     List<GestionPsicologo> cargarGestionesRegistro(@Param("idGestion")Integer  idGestion);
     
     @Query(value="select P.* from gestionPsicologo P where P.envioKibana=:envioKibana",nativeQuery = true)            

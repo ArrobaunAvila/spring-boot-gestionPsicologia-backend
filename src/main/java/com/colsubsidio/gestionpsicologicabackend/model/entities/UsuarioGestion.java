@@ -51,6 +51,9 @@ public class UsuarioGestion implements Serializable {
     @Column(name = "fechaIngreso")
     @Temporal(TemporalType.TIMESTAMP)
     private Date fechaIngreso;
+    @Basic(optional = false)
+    @Column(name = "apellidoUsuario")
+    private String apellidoUsuario;
     
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idUsuarioGestiona")
     private List<GestionPsicologo> gestionPsicologoList;
@@ -121,6 +124,16 @@ public class UsuarioGestion implements Serializable {
         this.gestionPsicologoList = gestionPsicologoList;
     }
 
+    public String getApellidoUsuario() {
+        return apellidoUsuario;
+    }
+
+    public void setApellidoUsuario(String apellidoUsuario) {
+        this.apellidoUsuario = apellidoUsuario;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;

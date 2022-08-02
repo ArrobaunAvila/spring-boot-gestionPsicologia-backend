@@ -48,7 +48,8 @@ public class GestionUsuarioController {
              if(utils.validateCriterios(request.getNombreUsuario())
                 && utils.validateCriterios(request.getPassword())     
                 && utils.validateCriterios(request.getUsuarioSesion())
-                && utils.validateCriterios(request.getNombreUsuario())){
+                && utils.validateCriterios(request.getNombreUsuario())
+                && utils.validateCriterios(request.getApellidoUsuario())){
                 
                     return new ResponseEntity<>(gestionUsuarioService.save(utils.uuid(),request), HttpStatus.OK);
                 
@@ -56,7 +57,7 @@ public class GestionUsuarioController {
                 }else{
                      GuardarUsuarioResponse response = new GuardarUsuarioResponse();
                      response.setEstado("FALSE");
-                     response.setDescripcion("Los valores : usuarioSesion, NombreUsuario,userLoguin, password son requeridos");
+                     response.setDescripcion("Los valores : usuarioSesion, nombreUsuario,apellidoUsuario,userLoguin, password son requeridos");
                      return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
                  }
             

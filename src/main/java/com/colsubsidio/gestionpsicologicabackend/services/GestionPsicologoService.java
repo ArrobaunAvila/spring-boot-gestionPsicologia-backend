@@ -134,6 +134,8 @@ private UpdateKibanaService updateKibanaService;
          try {
              List<UsuarioGestion> list = usuarioGestionRepository.usuarioPorLogin(registrarGestionPiscologo.getUserLogin());
              RegistroGestionPsicologica find=registroGestionRepository.findById(Integer.valueOf(registrarGestionPiscologo.getIdGestion())).get();
+              EstadoGestion estadoGestion=estadoGestionRepository.getOne(this.propertiesUtil.getIdEstadoSesion());
+                        
              if (list != null && !list.isEmpty()) {
                  UsuarioGestion usuario=list.get(0);
                  logService.completeResponseService(buscarUsuario, true, usuario, true);
@@ -143,6 +145,7 @@ private UpdateKibanaService updateKibanaService;
                  object.setIdRegistroGestion(new RegistroGestionPsicologica(Integer.valueOf(registrarGestionPiscologo.getIdGestion())));
                  object.setIdUsuarioGestiona(new UsuarioGestion(usuario.getIdUsuario()));
                  object.setEnvioKibana(Boolean.FALSE);
+                 object.setIdEstadoGestion(estadoGestion.getIdEstado().intValue());
                  if(find!=null && find.getGestionPsicologoList()!=null&&!find.getGestionPsicologoList().isEmpty()){
                       object.setNumeroGestion(find.getGestionPsicologoList().size()+1);
                  }else{
@@ -155,7 +158,6 @@ private UpdateKibanaService updateKibanaService;
                      response.setDescripcion("guardado con exito");
                      response.setEstado("OK");
                      if(find!=null){
-                         EstadoGestion estadoGestion=estadoGestionRepository.getOne(this.propertiesUtil.getIdEstadoSesion());
                          find.setIdEstadoGestion(estadoGestion);
                      
                      }
@@ -200,10 +202,13 @@ private UpdateKibanaService updateKibanaService;
          }finally{
              logService.sendLogToKibana(dtoKibana, uuid,this.propertiesUtil.getKibanaSideRegistrar());
              SearchResponse responseUpdate=updateKibanaService.searchDatos(uuid, registrarGestionPiscologo.getIdGestion(), dtoKibana);
-             responseUpdate.getDatos().put("cantidadDeGestiones",response.getRegistro().getCantidadGestiones());
-             responseUpdate.getDatos().put("estadoGestion", response.getRegistro().getEstado());
-             updateKibanaService.actualizarElastic(uuid, dtoKibana, responseUpdate.getDatos(), null, responseUpdate.getIdDoc(),response.getRegistro().getEstado());
+             if(responseUpdate!=null && responseUpdate.getDatos()!=null){
+                  responseUpdate.getDatos().put("cantidadDeGestiones",response.getRegistro().getCantidadGestiones());
+                  responseUpdate.getDatos().put("estadoGestion", response.getRegistro().getEstado());
+                  updateKibanaService.actualizarElastic(uuid, dtoKibana, responseUpdate.getDatos(), null, responseUpdate.getIdDoc(),response.getRegistro().getEstado());
         
+             }
+            
          }
         
          

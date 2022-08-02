@@ -34,6 +34,7 @@ public class UtilsMapDto {
         dto.setIdRegistroGestion(object.getIdRegistroGestion().getIdGestion());
         dto.setUsuarioNombre(object.getIdUsuarioGestiona().getNombreUsuario());
         dto.setNumeroDeGestion(object.getNumeroGestion().toString());
+        dto.setIdEstadoGestion(object.getIdEstadoGestion());
         return dto;
     }
     
