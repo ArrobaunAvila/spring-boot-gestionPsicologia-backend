@@ -199,17 +199,18 @@ private UpdateKibanaService updateKibanaService;
              dtoKibana.setError(e.getMessage());
              response.setDescripcion("Excepcion guardando datos a gestionar: "+e.getMessage());
              response.setEstado("ERROR");
-         }finally{
-             logService.sendLogToKibana(dtoKibana, uuid,this.propertiesUtil.getKibanaSideRegistrar());
-             SearchResponse responseUpdate=updateKibanaService.searchDatos(uuid, registrarGestionPiscologo.getIdGestion(), dtoKibana);
-             if(responseUpdate!=null && responseUpdate.getDatos()!=null){
-                  responseUpdate.getDatos().put("cantidadDeGestiones",response.getRegistro().getCantidadGestiones());
-                  responseUpdate.getDatos().put("estadoGestion", response.getRegistro().getEstado());
-                  updateKibanaService.actualizarElastic(uuid, dtoKibana, responseUpdate.getDatos(), null, responseUpdate.getIdDoc(),response.getRegistro().getEstado());
-        
-             }
-            
          }
+//         finally{
+//             logService.sendLogToKibana(dtoKibana, uuid,this.propertiesUtil.getKibanaSideRegistrar());
+//             SearchResponse responseUpdate=updateKibanaService.searchDatos(uuid, registrarGestionPiscologo.getIdGestion(), dtoKibana);
+//             if(responseUpdate!=null && responseUpdate.getDatos()!=null){
+//                  responseUpdate.getDatos().put("cantidadDeGestiones",response.getRegistro().getCantidadGestiones());
+//                  responseUpdate.getDatos().put("estadoGestion", response.getRegistro().getEstado());
+//                  updateKibanaService.actualizarElastic(uuid, dtoKibana, responseUpdate.getDatos(), null, responseUpdate.getIdDoc(),response.getRegistro().getEstado());
+//        
+//             }
+//            
+//         }
         
          
          

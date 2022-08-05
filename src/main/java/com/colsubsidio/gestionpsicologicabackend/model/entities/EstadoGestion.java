@@ -49,6 +49,8 @@ public class EstadoGestion implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "idEstadoGestion")
     @JsonIgnore
     private List<RegistroGestionPsicologica> registroGestionPsicologicaList;
+    @Column(name = "permiteRegistrarGestiones")
+    private boolean permiteRegistrarGestiones;
     
 
     public EstadoGestion() {
@@ -94,6 +96,14 @@ public class EstadoGestion implements Serializable {
 
     public void setRegistroGestionPsicologicaList(List<RegistroGestionPsicologica> registroGestionPsicologicaList) {
         this.registroGestionPsicologicaList = registroGestionPsicologicaList;
+    }
+
+    public boolean isPermiteRegistrarGestiones() {
+        return permiteRegistrarGestiones;
+    }
+
+    public void setPermiteRegistrarGestiones(boolean permiteRegistrarGestiones) {
+        this.permiteRegistrarGestiones = permiteRegistrarGestiones;
     }
 
     

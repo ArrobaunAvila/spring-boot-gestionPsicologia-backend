@@ -6,12 +6,14 @@
 package com.colsubsidio.gestionpsicologicabackend.services;
 
 import com.colsubsidio.gestionpsicologicabackend.dto.GestionPsicologicaKibana;
+import com.colsubsidio.gestionpsicologicabackend.dto.GestionPsicologoResponse;
 import com.colsubsidio.gestionpsicologicabackend.dto.updatekibana.SearchResponse;
 
 import com.colsubsidio.gestionpsicologicabackend.model.entities.GestionPsicologo;
 import com.colsubsidio.gestionpsicologicabackend.model.repositories.GestionPsicoRepositoryI;
 import com.colsubsidio.gestionpsicologicabackend.utils.PropertiesUtil;
 import com.colsubsidio.gestionpsicologicabackend.utils.Utils;
+import com.colsubsidio.gestionpsicologicabackend.utils.UtilsMapDto;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -43,6 +45,9 @@ public class TareasCronService {
     @Autowired
     private PropertiesUtil propertiesUtil;
     
+    @Autowired
+    private UtilsMapDto utilsMapDto;
+    
     public void process(){
        
         String uuid=utils.uuid();
@@ -54,12 +59,18 @@ public class TareasCronService {
         List<GestionPsicologo> listaGestion = gestioPsicoloPendienteKibana(uuid, dtoKibana);
         if(listaGestion!=null && !listaGestion.isEmpty()){
              for(GestionPsicologo obj:listaGestion){
-              SearchResponse search=  updateKibanaService.searchDatos(uuid, obj.getIdRegistroGestion().getIdGestion().toString(), dtoKibana);   
-              Map<String, String> datos=  search.getDatos();
-              boolean res=updateKibanaService.actualizarElastic(uuid, dtoKibana, datos, obj,search.getIdDoc(),"");
-              if(res){
-                  actualizarRegistroEnviado(obj, uuid, dtoKibana);
-              }
+//              SearchResponse search=  updateKibanaService.searchDatos(uuid, obj.getIdRegistroGestion().getIdGestion().toString(), dtoKibana);   
+//              Map<String, String> datos=  search.getDatos();
+//              boolean res=updateKibanaService.actualizarElastic(uuid, dtoKibana, datos, obj,search.getIdDoc(),"");
+//              if(res){
+//                  actualizarRegistroEnviado(obj, uuid, dtoKibana);
+//              }
+             
+                 boolean res=tareasKibana(obj, uuid, dtoKibana);
+                 if(res){
+                     actualizarRegistroEnviado(obj, uuid, dtoKibana);
+                 }
+             
              }
              
              logService.sendLogToKibana(dtoKibana, uuid,this.propertiesUtil.getKibaSideCron());
@@ -108,7 +119,35 @@ public class TareasCronService {
         
     }
 
-
+     
+   public boolean tareasKibana(GestionPsicologo obj,String uuid, GestionPsicologicaKibana dtoKibana){
+       boolean res=Boolean.FALSE;      
+       try{
+             GestionPsicologoResponse response= new GestionPsicologoResponse();
+             response.setDescripcion("guardado con exito");
+             response.setEstado("OK");
+             response.setRegistro(utilsMapDto.registroDto(obj.getIdRegistroGestion()));
+             response.setGestionPsicologo(utilsMapDto.gestionPsicologoDTO(obj));
+             response.getGestionPsicologo().setUsuarioNombre(obj.getIdUsuarioGestiona().getNombreUsuario()+" "+obj.getIdUsuarioGestiona().getApellidoUsuario());
+             dtoKibana.setGestionPsicologo(response.getGestionPsicologo());
+             dtoKibana.setRegistroGestion(response.getRegistro());
+             logService.sendLogToKibana(dtoKibana, uuid,this.propertiesUtil.getKibanaSideRegistrar());
+             SearchResponse responseUpdate=updateKibanaService.searchDatos(uuid, obj.getIdRegistroGestion().getIdGestion().toString(), dtoKibana);
+             
+             if(responseUpdate!=null && responseUpdate.getDatos()!=null){
+                  responseUpdate.getDatos().put("cantidadDeGestiones",obj.getIdRegistroGestion().getCantidadGestiones().toString());
+                  responseUpdate.getDatos().put("estadoGestion", obj.getIdRegistroGestion().getIdEstadoGestion().getNombre());
+                  updateKibanaService.actualizarElastic(uuid, dtoKibana, responseUpdate.getDatos(), null, responseUpdate.getIdDoc(),obj.getIdRegistroGestion().getIdEstadoGestion().getNombre());
+        
+             }
+              res=Boolean.TRUE;
+             }catch(Exception e){
+                  log.error(uuid+" Excepcion actualizando gestiones psicologo a enviar", e);
+                 res=Boolean.FALSE;   
+             }
+       
+         return res;
+   }
 
 
 

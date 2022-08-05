@@ -39,6 +39,8 @@ public class RegistroGestionPsicologicaDTO {
     
     private Integer idEstadoGestion;
     
+    private boolean permiteRegistrarGestiones;
+    
     
     
 }

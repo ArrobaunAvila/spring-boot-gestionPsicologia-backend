@@ -27,7 +27,7 @@ public class CronGestionPsicologo {
     public void sendKibanaGestionesPsicologo(){
         
         
-       // cronservice.process();
+        cronservice.process();
         
         
     }
